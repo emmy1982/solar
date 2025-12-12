@@ -259,36 +259,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('🎯 Efectos de scroll configurados');
     console.log('💫 Efectos de hover mejorados');
 
-    // ========== NAVBAR MOBILE MENU ==========
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    // Toggle menu
-    navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-    });
-
-    // Close menu on link click
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    });
-
-    // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-
     // ========== SCROLL TO TOP BUTTON ==========
     const scrollTopBtn = document.querySelector('.scroll-top-btn');
 
@@ -314,13 +284,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Recargar en cambios de tamaño
     window.addEventListener('resize', () => {
         scroll.update();
-        
-        // Close mobile menu on resize to desktop
-        if (window.innerWidth > 900) {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        }
     });
 
     // ========== EFECTO PARALLAX SUAVE (SIN AFECTAR VISIBILIDAD) ==========

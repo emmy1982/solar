@@ -17,6 +17,39 @@
 <body data-scroll-container>
 
     <header></header>
+    
+    <!-- Menú Móvil Overlay (Separado y solo para móvil) -->
+    <div class="mobile-menu-overlay" aria-hidden="true">
+        <div class="mobile-menu-content">
+            <button class="mobile-menu-close" aria-label="Cerrar menú">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <nav class="mobile-nav">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item">
+                        <a href="../index.html" class="mobile-nav-link">Home</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="conocenos.html" class="mobile-nav-link">Conócenos</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="../index.html#servicios" class="mobile-nav-link">Servicios</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="productos.html" class="mobile-nav-link">Productos</a>
+                    </li>
+                    <li class="mobile-nav-item mobile-nav-item-cta">
+                        <a href="contacto.html" class="mobile-nav-cta">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
     <main>
         <!-- Hero Section -->
         <section class="products-hero" data-scroll-section>
@@ -35,8 +68,8 @@
                             <span>ENERBYTE</span>
                         </a>
 
-                        <!-- Menu Links -->
-                        <ul class="nav-menu">
+                        <!-- Menu Links Desktop -->
+                        <ul class="nav-menu nav-menu-desktop">
                             <li class="nav-item">
                                 <a href="../index.html" class="nav-link">Home</a>
                             </li>
@@ -49,17 +82,16 @@
                             <li class="nav-item">
                                 <a href="productos.html" class="nav-link active">Productos</a>
                             </li>
-                            <li class="nav-item nav-item-mobile">
-                                <a href="contacto.html" class="nav-cta-mobile">Contacto</a>
-                            </li>
                         </ul>
 
-                        <!-- CTA Button -->
-                        <a href="contacto.html" class="nav-cta">Contacto</a>
+                        <!-- CTA Button Desktop -->
+                        <a href="contacto.html" class="nav-cta nav-cta-desktop">Contacto</a>
 
                         <!-- Mobile Menu Toggle -->
-                        <button class="nav-toggle" aria-label="Abrir menú">
-                            <span class="hamburger"></span>
+                        <button class="mobile-menu-toggle" aria-label="Abrir menú">
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
                         </button>
                     </div>
                 </nav>
@@ -592,6 +624,7 @@
 
     <!-- Locomotive Scroll JS -->
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="../js/menu.js"></script>
     <script src="../js/productos.js"></script>
 </body>
 </html>
