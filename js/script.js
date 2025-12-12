@@ -79,6 +79,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Ejecutar animaciones
     setTimeout(animateOnScroll, 500);
+    
+    // ========== ASEGURAR VISIBILIDAD DE FONDOS ==========
+    // Garantizar que las imágenes de fondo de las cajas sean visibles
+    setTimeout(() => {
+        const sections = document.querySelectorAll('.caja2, .caja3, .caja4, .caja5');
+        sections.forEach(section => {
+            section.style.opacity = '1';
+            section.style.transform = 'scale(1) translateY(0)';
+        });
+    }, 100);
 
     // ========== CONTADOR ANIMADO PARA ESTADÍSTICAS ==========
     function animateCounter(element, target, suffix = '', duration = 2000) {
@@ -326,19 +336,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ========== EFECTO PARALLAX EN SECCIONES ==========
+    // ========== EFECTO PARALLAX SUAVE (SIN AFECTAR VISIBILIDAD) ==========
     scroll.on('scroll', (args) => {
         const currentScrollY = args.scroll.y;
         
-        // Parallax sutil para las secciones de cajas
+        // Efecto parallax solo en el background position
         const sections = document.querySelectorAll('.caja2, .caja3, .caja4, .caja5');
         sections.forEach((section, index) => {
             const rect = section.getBoundingClientRect();
-            const scrollPercent = (rect.top / window.innerHeight) * 100;
+            const windowHeight = window.innerHeight;
+            const sectionTop = rect.top;
             
-            // Efecto parallax muy sutil en el fondo
+            // Efecto parallax sutil SOLO en el fondo
+            const scrollPercent = (sectionTop / windowHeight) * 100;
             if (scrollPercent < 100 && scrollPercent > -100) {
-                section.style.backgroundPosition = `center ${50 + scrollPercent * 0.05}%`;
+                section.style.backgroundPosition = `center ${50 + scrollPercent * 0.15}%`;
             }
         });
         

@@ -93,6 +93,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Mission boxes
         const missionBoxes = document.querySelectorAll('.mission-box');
         
+        // Mission box images
+        const missionImages = document.querySelectorAll('.mission-box-image img');
+        
+        // Team box images
+        const teamImages = document.querySelectorAll('.team-box-image img');
+        
         // Value items
         const valueItems = document.querySelectorAll('.value-item');
         
@@ -104,10 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Final CTA
         const finalCTA = document.querySelector('.final-cta-container');
-        
-        // Imágenes (Mission y Team)
-        const missionImage = document.querySelector('.mission-box-image img');
-        const teamImage = document.querySelector('.team-box-image img');
         
         const observerOptions = {
             threshold: 0.2,
@@ -124,16 +126,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Observar elementos
         missionBoxes.forEach(el => observer.observe(el));
+        missionImages.forEach(el => observer.observe(el));
+        teamImages.forEach(el => observer.observe(el));
         valueItems.forEach(el => observer.observe(el));
         teamStats.forEach(el => observer.observe(el));
         timelineItems.forEach(el => observer.observe(el));
         if (finalCTA) observer.observe(finalCTA);
-        if (missionImage) observer.observe(missionImage);
-        if (teamImage) observer.observe(teamImage);
     };
 
     // Ejecutar animaciones
     setTimeout(animateOnScroll, 500);
+    
+    // ========== FORZAR CARGA INMEDIATA DE IMÁGENES ==========
+    // Asegurar que las imágenes se muestren incluso si el observer tarda
+    setTimeout(() => {
+        const allImages = document.querySelectorAll('.mission-box-image img, .team-box-image img');
+        allImages.forEach(img => {
+            if (!img.classList.contains('is-inview')) {
+                img.classList.add('is-inview');
+            }
+        });
+    }, 1000);
 
     // ========== CONTADOR ANIMADO PARA ESTADÍSTICAS DEL EQUIPO ==========
     function animateCounter(element, target, suffix = '', duration = 2000) {
