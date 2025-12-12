@@ -41,31 +41,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ========== NAVBAR SCROLL EFFECT ==========
-    let lastScrollY = 0;
-    const navbar = document.querySelector('.navbar');
-
     // ========== SCROLL TO TOP BUTTON ==========
     const scrollTopBtn = document.querySelector('.scroll-top-btn');
 
     scroll.on('scroll', (args) => {
         const currentScrollY = args.scroll.y;
         
-        // Add/remove scrolled class for styling
-        if (currentScrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-
         // Show/hide scroll to top button
         if (currentScrollY > 500) {
             scrollTopBtn.classList.add('visible');
         } else {
             scrollTopBtn.classList.remove('visible');
         }
-
-        lastScrollY = currentScrollY;
     });
 
     // Scroll to top on button click

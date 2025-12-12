@@ -90,6 +90,7 @@ main {
     background: url(../assets/image/eco-friendly-solar-pannels-sunny-day.jpg) no-repeat center;
     background-size: cover;
     padding: 20px;
+    padding-top: 40px;
 }
 
 .products-hero::before {
@@ -616,6 +617,7 @@ main {
 @media (max-width: 600px) {
     .products-hero {
         padding: 10px;
+        padding-top: 40px;
         height: 55vh;
     }
 

@@ -109,7 +109,7 @@ main{
     background-size: cover;
     filter: saturate(0.8);
     padding: 20px;
-    padding-top: 80px; /* Espacio adicional para el navbar */
+    padding-top: 280px;
 }
 
 .about-hero::before {
@@ -151,7 +151,7 @@ main{
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 6%;
+    margin-top: -320px;
 }
 
 .about-hero-text h1 {
@@ -814,7 +814,7 @@ main{
 /* Responsive */
 @media (max-width: 900px) {
     .about-hero {
-        padding-top: 90px; /* Más espacio para el navbar en tablet */
+        padding-top: 140px;
     }
 
     .about-hero-content {

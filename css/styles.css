@@ -136,14 +136,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ========== NAVBAR ========== */
 .navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
     z-index: 9999;
     padding: 20px 25px;
-    margin-top: 3.3%;
-    
 }
 
 .nav-container {
@@ -507,6 +501,7 @@ h1, h2, h3, h4, h5, h6 {
     background-size: cover;
     filter:saturate(0.8);
     padding: 20px;
+    padding-top: 40px;
     position: relative;
     overflow: hidden;
 }
@@ -2537,20 +2532,7 @@ html.has-scroll-smooth {
 }
 
 /* ========== MEJORAS VISUALES PARA NAVBAR ========== */
-.navbar {
-    animation: slideDown 0.6s ease-out;
-}
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
+/* Animación de navbar eliminada para comportamiento simple */
 
 /* ========== ANIMACIÓN DE LAS ESTRELLAS ========== */
 .users-stars span {
