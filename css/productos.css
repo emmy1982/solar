@@ -186,9 +186,10 @@ main {
     align-items: flex-start;
     gap: 30px;
     margin-bottom: 60px;
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1;
+    transform: translateY(0);
     transition: opacity 0.8s ease, transform 0.8s ease;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .category-header.is-inview {
@@ -233,8 +234,9 @@ main {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(0, 0, 0, 0.05);
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .product-card.is-inview {
@@ -566,6 +568,11 @@ main {
 
     .products-hero-text {
         margin-top: 30%;
+    }
+    
+    /* Ocultar párrafo del hero en responsive */
+    .products-hero-text p {
+        display: none;
     }
 
     .category-header {

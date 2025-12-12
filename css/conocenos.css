@@ -109,6 +109,7 @@ main{
     background-size: cover;
     filter: saturate(0.8);
     padding: 20px;
+    padding-top: 80px; /* Espacio adicional para el navbar */
 }
 
 .about-hero::before {
@@ -812,6 +813,10 @@ main{
 
 /* Responsive */
 @media (max-width: 900px) {
+    .about-hero {
+        padding-top: 90px; /* Más espacio para el navbar en tablet */
+    }
+
     .about-hero-content {
         flex-direction: column;
         align-items: flex-start;
@@ -824,6 +829,11 @@ main{
 
     .stats-row {
         width: 100%;
+    }
+    
+    /* Ocultar botón del hero en responsive */
+    .about-hero-text .hero-btn {
+        display: none;
     }
 
     .mission-split,
@@ -989,6 +999,7 @@ main{
 @media (max-width: 600px) {
     .about-hero {
         padding: 10px;
+        padding-top: 220px; /* Más espacio para el navbar en móvil */
     }
 
     .about-hero-container {
