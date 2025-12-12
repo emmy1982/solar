@@ -131,7 +131,7 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 6%;
+    margin-top: -40px;
 }
 
 .hero-badge {
@@ -568,7 +568,7 @@ main {
     }
 
     .products-hero-text {
-        margin-top: 30%;
+        margin-top: 0%;
     }
     
     /* Ocultar párrafo del hero en responsive */

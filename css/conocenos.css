@@ -98,105 +98,93 @@ main{
     overflow: hidden;
 }
 
-/* Hero Section - Igual que index */
+/* ========== HERO SECTION ========== */
 .about-hero {
     width: 100%;
     height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(../assets/image/eo.jpg) no-repeat center ;
+    padding: 0;
+    background: url(../assets/image/eo.jpg) no-repeat center;
     background-size: cover;
-    filter: saturate(0.8);
-    padding: 20px;
-    padding-top: 280px;
+    position: relative;
 }
 
-.about-hero::before {
+.about-hero-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.about-hero-container::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.408) 0%, rgba(0, 0, 0, 0) 100%);
-}
-
-.about-hero-container {
-    position: relative;
-    width: 100%;
-    max-width: 1700px;
-    height: 90vh;
-    border-radius: 30px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    background: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0.2) 0%, 
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 0, 0, 0.5) 100%);
+    z-index: 1;
 }
 
 .about-hero-content {
     position: relative;
     z-index: 2;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
-    gap: 40px;
+    padding: 60px 40px;
     flex: 1;
 }
 
 .about-hero-text {
-    max-width: 700px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    max-width: 1000px;
     text-align: center;
-    margin-top: -320px;
 }
 
 .about-hero-text h1 {
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 700;
+    font-family: var(--font-titles);
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 800;
     color: var(--color-light);
     line-height: 1.1;
-    margin-bottom: 20px;
-    letter-spacing: -1px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 1s ease-out 0.3s backwards;
+    margin-bottom: 25px;
+    letter-spacing: -2px;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .about-hero-text p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.35rem);
     color: var(--color-light);
-    line-height: 1.6;
-    margin-bottom: 25px;
-    max-width: 600px;
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.455);
-    animation: fadeInUp 1s ease-out 0.5s backwards;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
+    font-weight: 400;
+    opacity: 0.95;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
 .about-hero-text .hero-btn {
-    animation: fadeInUp 1s ease-out 0.7s backwards;
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+    box-shadow: 0 10px 30px rgba(193, 218, 84, 0.4);
+    transition: all 0.3s ease;
 }
 
-.about-hero-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.stats-row {
-    display: flex;
-    gap: 15px;
-}
-
-.stat-card-full {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
+.about-hero-text .hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(193, 218, 84, 0.5);
 }
 
 /* Misión Section - Cajas separadas */
@@ -814,21 +802,22 @@ main{
 /* Responsive */
 @media (max-width: 900px) {
     .about-hero {
-        padding-top: 140px;
+        height: 70vh;
     }
 
     .about-hero-content {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 30px;
+        padding: 40px 25px;
     }
 
-    .about-hero-stats {
-        width: 100%;
+    .about-hero-text h1 {
+        font-size: 2.8rem;
+        letter-spacing: -1px;
+        margin-bottom: 20px;
     }
 
-    .stats-row {
-        width: 100%;
+    .about-hero-text p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
     }
     
     /* Ocultar botón del hero en responsive */
@@ -998,25 +987,23 @@ main{
 
 @media (max-width: 600px) {
     .about-hero {
-        padding: 10px;
-        padding-top: 220px; /* Más espacio para el navbar en móvil */
-    }
-
-    .about-hero-container {
-        border-radius: 20px;
-        height: 95vh;
+        height: 60vh;
     }
 
     .about-hero-content {
-        padding: 20px;
+        padding: 30px 20px;
     }
 
     .about-hero-text h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        letter-spacing: -0.5px;
+        margin-bottom: 18px;
     }
 
-    .stats-row {
-        flex-direction: column;
+    .about-hero-text p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+        line-height: 1.6;
     }
 
     .history-section {

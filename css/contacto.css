@@ -93,17 +93,7 @@ body {
     }
 }
 
-/* Navbar Contacto */
-.navbar-contacto {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    padding: 20px 40px;
-    background: transparent;
-}
-
+/* Navbar - Usa estilos globales de styles.css */
 .nav-cta-active {
     background: var(--color-dark) !important;
     color: var(--color-light) !important;
@@ -112,16 +102,24 @@ body {
 /* ========== HERO SECTION ========== */
 .contact-hero {
     min-height: 70vh;
-    padding: 40px 40px 80px;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    max-width: 100%;
-    margin: 0 auto;
-    gap: 60px;
+    flex-direction: column;
     background: url('../assets/image/hero10.webp') no-repeat center center;
     background-size: cover;
     position: relative;
+    padding: 0;
+}
+
+.contact-hero-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 60px;
+    padding: 60px 40px 80px;
+    flex: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .contact-hero::before {
@@ -841,15 +839,15 @@ body {
 }
 
 @media (max-width: 900px) {
-    .navbar-contacto {
-        padding: 15px 20px;
+    .contact-hero {
+        min-height: 60vh;
     }
 
-    .contact-hero {
+    .contact-hero-wrapper {
         flex-direction: column;
         align-items: flex-start;
         padding: 40px 25px 60px;
-        min-height: auto;
+        gap: 40px;
     }
 
     .contact-main {
@@ -922,8 +920,9 @@ body {
         line-height: 1.6;
     }
 
-    .contact-hero {
+    .contact-hero-wrapper {
         padding: 40px 20px 50px;
+        gap: 30px;
     }
 
     .contact-hero-content h1 {

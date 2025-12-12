@@ -296,7 +296,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 900px) {
 
     .navbar {
-        padding: 15px;
+        padding: 5px;
     }
 
     .nav-container {
@@ -304,6 +304,7 @@ h1, h2, h3, h4, h5, h6 {
         background: var(--nav-bg);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
+        margin-top: -4%;
     }
 
     /* Mobile Menu Overlay */
@@ -799,6 +800,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 600px) {
     .hero {
         padding: 10px;
+        padding-top: 40px;
     }
 
     .hero-container {
